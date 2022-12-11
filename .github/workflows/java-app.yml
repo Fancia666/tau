@@ -1,0 +1,22 @@
+name: Java application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Test with maven
+      run: |
+        cd tau-5/taskSix/demo
+        mvn test
