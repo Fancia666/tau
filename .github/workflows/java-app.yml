@@ -16,6 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: 'corretto'
+        java-version: '17'
     - name: Test with maven
       run: |
         cd tau-5/taskSix/demo
